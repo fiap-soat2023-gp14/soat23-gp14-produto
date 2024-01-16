@@ -1,32 +1,42 @@
-import { ProductAdapter } from '../../../src/core/application/adapter/ProductAdapter';
-import ProductDTO from '../../../src/core/application/dto/ProductDTO';
-import Product from '../../../src/core/domain/entities/Product';
-import { Money } from '../../../src/core/domain/valueObjects/Money';
+import ProductDTO from "../../../../src/core/application/dto/ProductDTO";
+import Product from "../../../../src/core/domain/entities/Product";
+import {Money} from "../../../../src/core/domain/valueObjects/Money";
+import ProductAdapter from "../../../../src/core/application/adapter/ProductAdapter";
+import {ProductCategory} from "../../../../src/core/domain/enums/ProductCategory";
 
 describe('ProductAdapter', () => {
-  const mockProductDTO: ProductDTO = {
-    id: '1',
-    name: 'Test Product',
-    description: 'Test Description',
-    price: 100,
-    category: 'Test Category',
-    imageUrl: 'Test Image URL',
-    createdAt: new Date(),
-  };
+  let mockProduct: Product;
+  let mockProductDTO: ProductDTO;
 
-  const mockProduct: Product = {
-    id: '1',
-    name: 'Test Product',
-    description: 'Test Description',
-    price: { value: 100 },
-    category: 'Test Category',
-    imageUrl: 'Test Image URL',
-    createdAt: new Date(),
-  };
+  beforeEach(async () => {
+    const price = await Money.create(100);
+    const currentDate = new Date();
+    mockProduct = {
+      id: '1',
+      name: 'Test Product',
+      description: 'Test Description',
+      price: price,
+      category: ProductCategory.GARNISH,
+      imageUrl: 'http://image.png',
+      createdAt: currentDate,
+    };
+
+    mockProductDTO = {
+      id: '1',
+      name: 'Test Product',
+      description: 'Test Description',
+      price: 100,
+      category: ProductCategory.GARNISH,
+      imageUrl: 'http://image.png',
+      createdAt: currentDate,
+    };
+  });
+
 
   describe('toDomain', () => {
     it('should convert DTO to domain model successfully', async () => {
-      jest.spyOn(Money, 'create').mockResolvedValue({ value: 100 });
+      let mockedMoney = Money.create(100);
+      jest.spyOn(Money, 'create').mockResolvedValue(mockedMoney);
 
       const result = await ProductAdapter.toDomain(mockProductDTO);
       expect(result).toEqual(mockProduct);
