@@ -1,8 +1,8 @@
 {
-  "name": "fiap-application",
+  "name": "fiap-produto-application",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Microservico responsavel pelo gerenciamento de produtos e precos",
+  "author": "Malu Matos <malumatos@gmail.com>",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -70,5 +70,7 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "main": "main.ts",
+  "repository": "git@github.com:silvertonsg-fiap/soat23-gp14-produto.git"
 }
