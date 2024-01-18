@@ -1,24 +1,24 @@
-name: CI
+name: Build and Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
-
+    branches:
+      - main
+  workflow_dispatch:
 jobs:
   build:
+    name: Build and run tests
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Use Node.js
+      - name: Check out the repository
+        uses: actions/checkout@v3
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 14
-
       - name: Cache Node.js modules
         uses: actions/cache@v2
         with:
@@ -26,13 +26,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
       - name: Install Dependencies
         run: npm ci
-
       - name: Run Tests
-        run: npm test
-
-      - name: Build Docker image
-        run: |
-          docker build -t my-nest-app .
+        run: jest
