@@ -10,7 +10,7 @@ describe('ProductAdapter', () => {
 
   beforeEach(async () => {
     const price = await Money.create(100);
-    const currentDate = new Date();
+    const fixedDate = new Date('2022-01-01T00:00:00Z');
     mockProduct = {
       id: '1',
       name: 'Test Product',
@@ -18,7 +18,7 @@ describe('ProductAdapter', () => {
       price: price,
       category: ProductCategory.GARNISH,
       imageUrl: 'http://image.png',
-      createdAt: currentDate,
+      createdAt: fixedDate,
     };
 
     mockProductDTO = {
@@ -28,7 +28,7 @@ describe('ProductAdapter', () => {
       price: 100,
       category: ProductCategory.GARNISH,
       imageUrl: 'http://image.png',
-      createdAt: currentDate,
+      createdAt: fixedDate,
     };
   });
 
