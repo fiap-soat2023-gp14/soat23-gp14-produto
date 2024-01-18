@@ -52,6 +52,14 @@ describe('ProductAdapter', () => {
     });
   });
 
+  describe('toDTOEmptyList', () => {
+    it('should convert a list of domain models to DTOs successfully', () => {
+
+      const result = ProductAdapter.toDTOList([]);
+      expect(result).toEqual([]);
+    });
+  });
+
   describe('toDTO', () => {
     it('should convert domain model to DTO successfully', () => {
       const result = ProductAdapter.toDTO(mockProduct);
