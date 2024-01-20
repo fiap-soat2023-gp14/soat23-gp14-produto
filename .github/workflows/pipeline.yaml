@@ -38,6 +38,7 @@ jobs:
         run: yarn test
   sonar-validation:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - uses: actions/checkout@v3
         with:
