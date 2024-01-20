@@ -75,8 +75,8 @@
   },
   "jestSonar": {
     "sonar56x": true,
-    "reportPath": "testResults",
-    "reportFile": "sonar-report.xml",
+    "reportPath": ".",
+    "reportFile": "test-report.xml",
     "indent": 4
   },
   "main": "main.ts",
