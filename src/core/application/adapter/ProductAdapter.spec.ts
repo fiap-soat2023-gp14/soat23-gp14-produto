@@ -34,7 +34,7 @@ describe('ProductAdapter', () => {
 
 
   describe('toDomain', () => {
-    it('should convert DTO to domain model successfully', async () => {
+    it('Should convert ProductDTO to Product domain model successfully', async () => {
       let mockedMoney = Money.create(100);
       jest.spyOn(Money, 'create').mockResolvedValue(mockedMoney);
 
@@ -44,7 +44,7 @@ describe('ProductAdapter', () => {
   });
 
   describe('toDTOList', () => {
-    it('should convert a list of domain models to DTOs successfully', () => {
+    it('Should convert a list of Product domain models to ProductDTOs successfully', () => {
       jest.spyOn(ProductAdapter, 'toDTO').mockReturnValue(mockProductDTO);
 
       const result = ProductAdapter.toDTOList([mockProduct]);
@@ -52,18 +52,18 @@ describe('ProductAdapter', () => {
     });
   });
 
-  describe('toDTOEmptyList', () => {
-    it('should convert a list of domain models to DTOs successfully', () => {
-
-      const result = ProductAdapter.toDTOList([]);
-      expect(result).toEqual([]);
+  describe('toDTO', () => {
+    it('Should convert Product domain model to ProductDTO successfully', () => {
+      const result = ProductAdapter.toDTO(mockProduct);
+      expect(result).toEqual(mockProductDTO);
     });
   });
 
-  describe('toDTO', () => {
-    it('should convert domain model to DTO successfully', () => {
-      const result = ProductAdapter.toDTO(mockProduct);
-      expect(result).toEqual(mockProductDTO);
+  describe('toDTOEmptyList', () => {
+    it('Should convert a list of Product domain models to ProductDTOs successfully', () => {
+
+      const result = ProductAdapter.toDTOList([]);
+      expect(result).toEqual([]);
     });
   });
 });
