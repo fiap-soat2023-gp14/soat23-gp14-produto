@@ -15,6 +15,7 @@ module.exports = {
         'src/**/*.{js,jsx,ts,tsx}',
         '!src/core/application/dto/**',
         '!src/**/*.module.ts',
+        '!src/**/*.spec.ts',
         '!src/core/domain/entities/**',
         '!src/main.ts',
     ],
