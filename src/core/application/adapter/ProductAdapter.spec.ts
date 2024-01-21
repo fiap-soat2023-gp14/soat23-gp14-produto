@@ -1,8 +1,8 @@
-import ProductDTO from "../../../../src/core/application/dto/ProductDTO";
-import Product from "../../../../src/core/domain/entities/Product";
-import {Money} from "../../../../src/core/domain/valueObjects/Money";
-import ProductAdapter from "../../../../src/core/application/adapter/ProductAdapter";
-import {ProductCategory} from "../../../../src/core/domain/enums/ProductCategory";
+import ProductDTO from "../dto/ProductDTO";
+import Product from "../../domain/entities/Product";
+import {Money} from "../../domain/valueObjects/Money";
+import ProductAdapter from "./ProductAdapter";
+import {ProductCategory} from "../../domain/enums/ProductCategory";
 
 describe('ProductAdapter', () => {
   let mockProduct: Product;

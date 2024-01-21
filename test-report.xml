@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unitTest version="1">
+    <file path="/home/malu/workspace/soat23-gp14-produto/src/core/application/adapter/ProductAdapter.spec.ts">
+        <testCase name="ProductAdapter toDomain should convert DTO to domain model successfully" duration="41"/>
+        <testCase name="ProductAdapter toDTOList should convert a list of domain models to DTOs successfully" duration="1"/>
+        <testCase name="ProductAdapter toDTOEmptyList should convert a list of domain models to DTOs successfully" duration="6"/>
+        <testCase name="ProductAdapter toDTO should convert domain model to DTO successfully" duration="1"/>
+    </file>
+</unitTest>
