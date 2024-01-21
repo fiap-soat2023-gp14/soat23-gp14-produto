@@ -31,6 +31,8 @@ export class Money extends ValueObject<ValueProps> {
     const requiredErrors = await validate(this.props);
     if (requiredErrors.length > 0) {
       throw new ValidationException(requiredErrors);
+    } else if (typeof this.value !== 'number') {
+      throw new ValidationException('The price needs to be a number');
     } else if (this.value <= 0) {
       throw new ValidationException('The price needs to be greater than 0');
     }
