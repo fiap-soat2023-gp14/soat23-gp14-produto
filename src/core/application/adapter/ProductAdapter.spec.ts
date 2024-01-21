@@ -17,7 +17,7 @@ describe('ProductAdapter', () => {
       description: 'Test Description',
       price: price,
       category: ProductCategory.GARNISH,
-      imageUrl: 'http://image.png',
+      imageUrl: 'https://image.png',
       createdAt: fixedDate,
     };
 
@@ -27,7 +27,7 @@ describe('ProductAdapter', () => {
       description: 'Test Description',
       price: 100,
       category: ProductCategory.GARNISH,
-      imageUrl: 'http://image.png',
+      imageUrl: 'https://image.png',
       createdAt: fixedDate,
     };
   });

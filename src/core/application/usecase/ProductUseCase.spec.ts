@@ -21,7 +21,7 @@ describe('ProductUseCase', () => {
             description: 'Test Description',
             price: price,
             category: ProductCategory.GARNISH,
-            imageUrl: 'http://image.png',
+            imageUrl: 'https://image.png',
             createdAt: fixedDate,
         };
 
@@ -95,7 +95,7 @@ describe('ProductUseCase', () => {
                 description: 'Test Description',
                 price: await Money.create(200),
                 category: ProductCategory.GARNISH,
-                imageUrl: 'http://image.png',
+                imageUrl: 'https://image.png',
                 createdAt: new Date('2022-01-01T00:00:00Z'),
             };
             productGateway.update = jest.fn().mockResolvedValue(mockUpdatedProduct);
