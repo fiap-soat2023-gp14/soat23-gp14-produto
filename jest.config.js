@@ -9,7 +9,7 @@ module.exports = {
         '^.+\\.(ts|tsx)$': 'ts-jest',
     },
 
-    coverageDirectory: '../coverage',
+    coverageDirectory: 'coverage',
     coverageReporters: ['cobertura', 'html', 'lcov', 'text', 'clover', 'text-summary'],
     collectCoverageFrom: [
         'src/**/*.{js,jsx,ts,tsx}',
