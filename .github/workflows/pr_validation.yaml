@@ -35,7 +35,7 @@ jobs:
 
       - name: Check dir
         run: ls -la
-        working-directory: ${{ github.workspace }}/tmp
+#        working-directory: ${{ github.workspace }}/tmp
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
