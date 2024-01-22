@@ -29,7 +29,7 @@ jobs:
         run: yarn install
 
       - name: Run tests
-        run: yarn test
+        run: yarn test --coverage
 
       - name: Store code coverage results
         uses: actions/upload-artifact@v4
