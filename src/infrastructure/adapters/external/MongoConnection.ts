@@ -19,7 +19,7 @@ export class MongoConnection implements IConnection {
       throw error;
     }
   }
-  public getCollection(collectionName) {
+  public getCollection(collectionName: string) {
     return this.client.db().collection(collectionName);
   }
 }
