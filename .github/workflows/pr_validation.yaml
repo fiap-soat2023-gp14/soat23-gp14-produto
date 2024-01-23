@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: code-coverage-report
-          path: coverage/test-report.xml
+          path: coverage/
           retention-days: 1
           overwrite: true
 
