@@ -11,6 +11,7 @@ module.exports = {
 
     coverageDirectory: 'coverage',
     coverageReporters: ['cobertura', 'html', 'lcov', 'text', 'clover', 'text-summary'],
+    collectCoverage: true,
     collectCoverageFrom: [
         'src/**/*.{js,jsx,ts,tsx}',
         '!src/core/application/dto/**',
@@ -30,5 +31,9 @@ module.exports = {
     moduleNameMapper: {
         '^src/(.*)$': '<rootDir>/src/$1'
     },
-    testResultsProcessor: "jest-sonar-reporter"
+    reporters: ['default',  ['jest-sonar', {
+        outputDirectory: 'coverage',
+        outputName: 'test-report.xml',
+        reportedFilePath: 'relative'
+    }]],
 }
