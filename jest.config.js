@@ -33,7 +33,7 @@ module.exports = {
     },
     reporters: ['default',  ['jest-sonar', {
         outputDirectory: 'coverage',
-        // outputName: 'test-report.xml',
+        outputName: 'test-report.xml',
         reportedFilePath: 'relative'
     }]],
 }
