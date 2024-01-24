@@ -10,7 +10,7 @@ module.exports = {
     },
 
     coverageDirectory: 'coverage',
-    coverageReporters: ['cobertura', 'html', 'lcov', 'text', 'clover', 'text-summary'],
+    coverageReporters: ['lcov'],
     collectCoverage: true,
     collectCoverageFrom: [
         'src/**/*.{js,jsx,ts,tsx}',
