@@ -25,7 +25,6 @@ export default class HttpExceptionFilter implements ExceptionFilter {
     });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public isBusinessException(exception) {
     Logger.log(exception.stack);
     const httpStatus =
