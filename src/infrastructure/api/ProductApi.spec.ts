@@ -59,7 +59,7 @@ describe('ProductApi', () => {
                     imageUrl: 'https://image.png',
                     createdAt: new Date(),
                 },
-            ]; // Initialize your mock products here
+            ];
             jest.spyOn(ProductController, 'getAllProducts').mockResolvedValue(mockProducts);
             mockResponse.json = jest.fn().mockResolvedValue(mockProducts);
 
