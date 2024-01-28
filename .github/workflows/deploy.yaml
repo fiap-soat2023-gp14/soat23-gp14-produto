@@ -5,12 +5,16 @@ on:
     branches:
       - main
   workflow_dispatch:
+
+env:
+  AWS_REGION: us-east-1
+  ECR_REPOSITORY: ecr-fiap-product
+
 jobs:
 
   create-docker-image:
     name: Build and push the Docker image to ECR
     runs-on: ubuntu-latest
-    needs: sonar-validation
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
@@ -50,4 +54,4 @@ jobs:
 
       - name: Update ECS service
         run: |
-          aws ecs update-service --cluster ecs-cluster-fiap-project? --service ecs-service-fiap-project? --task-definition ecs-td-fiap-project? --force-new-deployment
+          aws ecs update-service --cluster ecs-cluster-product --service ecs-service-product --task-definition ecs-td-fiap-product --force-new-deployment
