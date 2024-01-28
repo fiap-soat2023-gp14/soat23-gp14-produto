@@ -35,9 +35,8 @@ export default class ProductUseCase {
     productGateway: IProductGateway,
   ) {
     await product.price.validate();
-
-    const productValidate = await this.getProductById(id, productGateway);
-    if (!productValidate) throw new Error(`Product with id ${id} not found`);
+    //validate product existence
+    await this.getProductById(id, productGateway);
     await productGateway.update(id, product);
     return product;
   }
@@ -45,9 +44,7 @@ export default class ProductUseCase {
     id: string,
     productGateway: IProductGateway,
   ) {
-    const product = await this.getProductById(id, productGateway);
-    if (!product)
-      throw new HttpNotFoundException(`Product with id ${id} not found`);
+    await this.getProductById(id, productGateway);
     return await productGateway.delete(id);
   }
 }

@@ -8,7 +8,6 @@ import {Test, TestingModule} from "@nestjs/testing";
 import ProductGateway from "../../../infrastructure/adapters/gateway/ProductGateway";
 
 describe('ProductUseCase', () => {
-    let productUseCase: ProductUseCase;
     let productGateway: IProductGateway;
     let mockProduct: Product;
 
@@ -38,7 +37,6 @@ describe('ProductUseCase', () => {
                 { provide: 'IUserGateway', useValue: productGateway }
             ],
         }).compile();
-        productUseCase = module.get<ProductUseCase>(ProductUseCase);
     });
 
     it('Should be defined', () => {
