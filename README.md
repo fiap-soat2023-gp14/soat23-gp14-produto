@@ -1,17 +1,25 @@
 # soat23-gp14-produto
 
-## Description
+## Descrição
 
-Product microservice responsible for managing the product catalog.
+Este Microserviço é reponsável por gerenciar os produtos do catálogo na Plataforma de Pedidos. Ele possuis as funções de:
+- Criar produto
+- Atualizar produto
+- Deletar produto
+- Consultar produto
 
-## Installation
-
+## Pré-requisitos
+- Node
+- MongoDB
+- 
+## Executando a aplicação
+- Faça o download do repositório através do arquivo zip ou do terminal usando o git clone
+- Acesse o diretório do projeto pelo seu terminal
+- Instale as dependências:
 ```bash
 $ yarn install
 ```
-
-## Running the app
-
+- Inicie a aplicação
 ```bash
 # development
 $ yarn run start
@@ -24,38 +32,11 @@ $ yarn run start:prod
 ```
 
 ## Test
-
+Execute os testes:
 ```bash
 # unit tests
 $ yarn run test
 
-# e2e tests
-$ yarn run test:e2e
-
 # test coverage
 $ yarn run test:cov
 ```
-## Docker
-
-Build the image and run the container:
-
-```bash
-docker build -t app-fiap .
-
-docker run --name app-fiap  -p 8080:8080 -d app-fiap
-```
-```bash
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
